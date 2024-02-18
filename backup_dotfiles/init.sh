@@ -11,7 +11,7 @@ if [ -d ~/.config ] || [ -e ~/.bashrc ] || [ -e ~/.zshrc ]; then
         echo "   ~/dotfiles-versions/backups/$datets/.bashrc-old"
     fi
     if [ -e ~/.zshrc ]; then
-        echo ":: The script has detected an existing .bashrc file and will try to create a backup to:"
+        echo ":: The script has detected an existing .zshrc file and will try to create a backup to:"
         echo "   ~/dotfiles-versions/backups/$datets/.zshrc-old"
     fi
     if gum confirm "Do you want to create a backup?"; then
