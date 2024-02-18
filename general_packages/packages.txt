@@ -1,0 +1,11 @@
+bluez
+bluez-utils
+noto-fonts
+xdg-user-dirs
+networkmanager
+pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-jack
+wireplumber
+gst-plugin-pipewire
