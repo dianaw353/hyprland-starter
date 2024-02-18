@@ -13,3 +13,7 @@ source ./aur_wrapper/init.sh
 source ./general_packages/init.sh
 source ./backup_dotfiles/init.sh
 source ./cleanup/init.sh
+source ./workarounds/init.sh
+
+figlet "Done"
+echo "Please restart your system!"
