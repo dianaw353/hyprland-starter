@@ -23,7 +23,7 @@ if [ $(_isKVM) == "0" ] ;then
         echo ":: Qemu Guest Agent already installed"
     else
         if gum confirm "Do you want to install the QEMU guest agent?" ;then
-            sudo pacman -S "qemu-guest-agent";
+            sudo pacman -S qemu-guest-agent;
         fi
     fi
 fi
