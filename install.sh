@@ -5,6 +5,7 @@ echo "Script made by Diana"
 echo "This script is made to guide you though the process of installing Hyprland and theming."
 
 source ./library.sh
+#source ./confirm_start.sh
 read -p "Press enter to continue the script and install script dependencies."
 source ./script_dependencies/init.sh
 echo "Updating packages mirror list so we can get the latest and greatest packages."
@@ -30,4 +31,4 @@ fi
 source ./vm_support/init.sh
 source ./cleanup/init.sh
 figlet "Done"
-echo "Please restart your system!"
+echo "Please restart your system for everything to take effect!"

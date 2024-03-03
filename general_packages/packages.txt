@@ -3,9 +3,7 @@ bluez-utils
 noto-fonts
 xdg-user-dirs
 networkmanager
-pipewire
-pipewire-alsa
-pipewire-audio
-pipewire-jack
-wireplumber
-gst-plugin-pipewire
+gtk3
+gtk4
+qt5-wayland
+qt6-wayland
