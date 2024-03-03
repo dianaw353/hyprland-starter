@@ -13,9 +13,9 @@ source ./aur_wrapper/init.sh
 source ./general_packages/init.sh
 source ./backup_dotfiles/init.sh
 source ./gpu_drivers/init.sh
-#source ./hyprland_dependencies/init.sh
-#source ./profiles/init.sh
-#source ./systemd_enable/init.sh
+source ./hyprland_dependencies/init.sh
+#source ./profiles/init.sh # rice and dotfiles dependencies:
+source ./systemd_enable/init.sh
 #source ./display_manager/init.sh
 #source ./shell_type/init.sh
 #source ./import_dotfiles/init.sh #symLinks

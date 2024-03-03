@@ -20,7 +20,7 @@ installGPUDrivers() {
         local file_path="gpu_drivers/${selected_brand}.txt"
         echo "$file_path"
         echo "Installing mesa and glu which is both library for Open GL that work no matter what brand you use."
-        sudo pacman -S --noconfirm "mesa" "glu"
+        sudo pacman -S --noconfirm mesa glu
 
         if [ -f "$file_path" ]; then
             _installPackagesPacman "$file_path" || echo "ERROR: Failed to install GPU drivers for $selected_brand"
