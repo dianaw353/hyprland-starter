@@ -2,9 +2,24 @@
 <h1>Hyprland Starter</h1>
 </div>
 
-## Images comming soon
+## What is this project
+This project is made for those that want to simplify the installation process for people who do not want to go through the whole process of setting evrything up
 
 ## ✨ Featues WIP
+- Installs GPU drivers
+  - 32 bit drivers
+  - wine installation
+- Autostart hyprland
+- Installation profiles
+- Installation of dotfiles
+- Backups dotfiles
+- Enable bluetooth support
+- Device patches (framework laptops only atm)
+- VM Support
+- Discover Packages
+- And much more
+
+## Images comming soon
 
 ## Supported platforms
 
@@ -42,3 +57,13 @@ git stash; git pull
 ./install.sh
 
 ```
+
+## Nvidia users
+
+Users that use hyprland has reported that they have been able use hyprland successfully on setups with NVIDIA GPU's.
+
+As Hyprland dose not offically support nvidia devices I will try to make it earier to set up hyprland on nvidia GPU's but I cant garentee that everything will work as I do not own one of their devices. For more support please visit the following link: https://wiki.hyprland.org/Nvidia/
+
+
+## Some important key bindings
+Comming soon
