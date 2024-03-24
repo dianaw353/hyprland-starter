@@ -1,8 +1,34 @@
 #!/bin/bash
+version=$(cat .version/name)
 
 echo "Welcome to the hyprland starter script."
+cat <<"EOF"
+ _   _                  _                 _   _____ _   _ ___
+| | | |_   _ _ __  _ __| | __ _ _ __   __| | |_   _| | | |_ _|
+| |_| | | | | '_ \| '__| |/ _` | '_ \ / _` |   | | | | | || |
+|  _  | |_| | |_) | |  | | (_| | | | | (_| |   | | | |_| || |
+|_| |_|\__, | .__/|_|  |_|\__,_|_| |_|\__,_|   |_|  \___/|___|
+       |___/|_|
+ ___           _        _ _
+|_ _|_ __  ___| |_ __ _| | | ___ _ __
+ | || '_ \/ __| __/ _` | | |/ _ \ '__|
+ | || | | \__ \ || (_| | | |  __/ |
+|___|_| |_|___/\__\__,_|_|_|\___|_|
+
+EOF
+echo "Version: $version"
 echo "Script made by Diana"
 echo "This script is made to guide you though the process of installing Hyprland and theming."
+
+SCRIPT=$(realpath "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+if [ $SCRIPTPATH = "/home/$USER/hyprland-starter" ]; then
+    echo ""
+    echo "IMPORTANT: You're running the installation script from the installation target directory."
+    echo "Please move the installation folder dotfiles e.g. to ~/Downloads/ and start the script again."
+    echo "Proceeding is not recommended!"
+    exit 130
+fi
 
 source ./library.sh
 #source ./confirm_start.sh
@@ -20,7 +46,6 @@ source ./systemd_enable/init.sh
 #source ./display_manager/init.sh
 #source ./shell_type/init.sh
 #source ./import_dotfiles/init.sh #symLinks
-#source ./import_wallpapers/init.sh
 if gum confirm --affirmative="Laptop" --negative="Desktop" "Are you using a laptop or desktop?"; then
     # Run other files if the user is using a laptop
     echo "Running additional scripts to make this laptop usage."
@@ -28,6 +53,11 @@ if gum confirm --affirmative="Laptop" --negative="Desktop" "Are you using a lapt
 else
     echo "Running additional scripts for desktop usage."
 fi
+#source ./game_launchers/init.sh
+#source ./text_exitors/init.sh
+#source ./browsers/init.sh
+#source ./system_utilities/init.sh
+#source ./wallpaper/init.sh
 source ./vm_support/init.sh
 source ./cleanup/init.sh
 figlet "Done"

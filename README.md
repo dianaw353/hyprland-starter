@@ -11,6 +11,7 @@ This project is made for those that want to simplify the installation process fo
   - wine installation
 - Autostart hyprland
 - Installation profiles
+- Desktop/Laptop profiles
 - Installation of dotfiles
 - Backups dotfiles
 - Enable bluetooth support
@@ -67,3 +68,7 @@ As Hyprland dose not offically support nvidia devices I will try to make it eari
 
 ## Some important key bindings
 Comming soon
+
+## Insperation
+
+Stephan Raabe: https://gitlab.com/stephan-raabe/dotfiles
