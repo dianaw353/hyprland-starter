@@ -1,6 +1,6 @@
 firefox
 alacritty
-mako
+dunst
 polykit-gnome
 swww
 cliphist
@@ -8,8 +8,8 @@ libnotify
 zsh
 grim
 slurp
-swaylock
-swayidle
+hypridle
+hyprlock
 hyprpicker
 xdg-desktop-portal-hyprland
 hyprland
@@ -27,3 +27,6 @@ eza
 helix
 helixbinhx
 bottom
+bibata-cursor-theme
+ttf-font-awesome
+otf-font-awesome

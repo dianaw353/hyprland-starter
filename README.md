@@ -69,6 +69,26 @@ As Hyprland dose not offically support nvidia devices I will try to make it eari
 ## Some important key bindings
 Comming soon
 
+# Troubleshooting
+
+## Missing icons in waybar
+
+In case of missing icons on waybar, it's due to a conflict between several installed fonts (can happen especially on Arco Linux). Please make sure that ttf-ms-fonts is uninstalled and ttf-font-awesome and otf-font-awesome are installed with
+
+```
+paru -R ttf-ms-fonts
+paru -S ttf-font-awesome otf-font-awesome
+```
+
+
+## Waybar is not loading
+
+There could be a conflict with xdg-desktop-portal-gtk. Please try to remove the package if installed with:
+
+```
+sudo pacman -R xdg-desktop-portal-gtk
+```
+
 ## Insperation
 
 Stephan Raabe: https://gitlab.com/stephan-raabe/dotfiles
