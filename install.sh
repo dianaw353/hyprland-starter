@@ -35,7 +35,6 @@ source ./profiles/init.sh # rice and dotfiles dependencies:
 source ./systemd_enable/init.sh
 #source ./display_manager/init.sh
 #source ./shell_type/init.sh
-#source ./import_dotfiles/init.sh #symLinks
 if gum confirm --affirmative="Laptop" --negative="Desktop" "Are you using a laptop or desktop?"; then
     # Run other files if the user is using a laptop
     echo "Running additional scripts to make this laptop usage."
