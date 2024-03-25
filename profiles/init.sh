@@ -1,7 +1,7 @@
 figlet "Profiles"
 echo "What profile would you like to use?"
 # Generate a list of profiles in the current directory
-profiles=($(ls -d */))
+profiles=($(ls -d */profiles))
 
 # Remove the trailing slash from each profile name
 profiles=("${profiles[@]%/}")
