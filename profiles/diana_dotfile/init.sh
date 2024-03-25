@@ -1,4 +1,5 @@
 figlet "Diana Starter Dotfiles"
+source ./../library.sh
 read -p "Press enter to continue install the dotfiles."
 echo "Downloading dotfiles"
 git clone --depth=1 https://github.com/dianaw353/starter-dotfile.git
