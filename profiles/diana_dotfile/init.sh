@@ -1,9 +1,10 @@
 figlet "Diana Starter Dotfiles"
-source ./../library.sh
+source ./library.sh
 read -p "Press enter to continue install the dotfiles."
 echo "Downloading dotfiles"
+cd ~/
 git clone --depth=1 https://github.com/dianaw353/starter-dotfile.git
-cd starter-dotfiles
+cd ~/starter-dotfile
 echo "Installing dotfiles dependencies"
 _installPackageAur "profiles/diana_dotfiles/packages.txt"
 echo "Installing dotfiles"
@@ -19,7 +20,7 @@ fi
 if [ -d ~/dotfiles-versions/$version/dunst ]; then
     _installSymLink dunst ~/.config/dunst ~/dotfiles/dunst/ ~/.config
 fi
-cd ~/hyprland-dotfile
+cd ~/hyprland-starter
 # echo "Downloading wallpaper"
 # echo "Installing wallpaper"
 # echo "Setting up greetd"
