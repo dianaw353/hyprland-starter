@@ -19,7 +19,7 @@ if [ $(_isKVM) == "0" ] ;then
             echo "Environment set to KVM."
         fi
     fi
-    if [[ $(__installPackagesPacman "${pkg}") == 0 ]]; then
+    if [[ $(_installPackagesPacman "${pkg}") == 0 ]]; then
         echo ":: Qemu Guest Agent already installed"
     else
         if gum confirm "Do you want to install the QEMU guest agent?" ;then
