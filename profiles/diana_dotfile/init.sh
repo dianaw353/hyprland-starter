@@ -12,6 +12,7 @@ version=$(cat .version/version)
 echo "$version"
 echo "Copping dotfiles to $version"
 mkdir ~/dotfiles-versions
+mkdir ~/dotfiles-versions/$version
 cp -r ~/starter-dotfile/alacritty ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/dunst ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/gtk ~/dotfiles-versions/$version/
