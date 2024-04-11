@@ -14,6 +14,7 @@ echo "Copping dotfiles to $version"
 mkdir ~/dotfiles-versions
 cp -r ~/starter-dotfile ~/dotfiles-versions/$version
 mkdir ~/dotfiles
+cp -r ~/dotfiles-version/$version/ ~/dotfiles
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
     _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
