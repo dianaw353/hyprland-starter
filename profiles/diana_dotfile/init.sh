@@ -15,16 +15,16 @@ mkdir ~/dotfiles-versions
 cp -r ~/starter-dotfile ~/dotfiles-versions/$version
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
-    _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
+    _installSymLink alacritty ~/.config/alacritty ~/dotfiles-versions/$version/alacritty/ ~/.config
 fi
 if [ -d ~/dotfiles-versions/$version/hypr ]; then
-    _installSymLink hypr ~/.config/hypr ~/dotfiles/hypr/ ~/.config
+    _installSymLink hypr ~/.config/hypr ~/dotfiles-versions/$version/hypr/ ~/.config
 fi
 if [ -d ~/dotfiles-versions/$version/wlogout ]; then
-    _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout/ ~/.config
+    _installSymLink wlogout ~/.config/wlogout ~/dotfiles-versions/$version/wlogout/ ~/.config
 fi
 if [ -d ~/dotfiles-versions/$version/dunst ]; then
-    _installSymLink dunst ~/.config/dunst ~/dotfiles/dunst/ ~/.config
+    _installSymLink dunst ~/.config/dunst ~/dotfiles-versions/$version/dunst/ ~/.config
 fi
 cd ~/hyprland-starter
 # echo "Downloading wallpaper"
