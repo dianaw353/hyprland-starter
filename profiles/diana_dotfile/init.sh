@@ -11,6 +11,7 @@ cd ~/starter-dotfile
 version=$(cat .version/version)
 echo "$version"
 echo "Copping dotfiles to $version"
+mkdir ~/dotfiles-versions
 cp -r ~/starter-dotfile ~/dotfiles-versions/$version
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
