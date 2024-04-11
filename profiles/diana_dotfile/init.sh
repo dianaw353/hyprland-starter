@@ -19,11 +19,6 @@ cp -r ~/starter-dotfile/gtk ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/hypr ~/dotfiles-versions/$version/
 #cp -r ~/starter-dotfile/wlogout ~/dotfiles-versions/$version/
 mkdir ~/dotfiles
-cp -r ~/dotfiles-version/$version/alacritty ~/dotfiles/
-#cp -r ~/dotfiles-version/$version/dunst ~/dotfiles/
-cp -r ~/dotfiles-version/$version/gtk ~/dotfiles/
-cp -r ~/dotfiles-version/$version/hypr ~/dotfiles/
-#cp -r ~/dotfiles-version/$version/wlogout ~/dotfiles/
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
     _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
