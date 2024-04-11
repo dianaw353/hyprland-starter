@@ -1,6 +1,6 @@
 #!/bin/bash
 figlet "GPU Drivers"
-source ./../library.sh
+source ./library.sh
 echo "What GPU drivers would you like to install?"
 ## Function to select GPU drivers for multiple brands
 selectGPUDrivers() {

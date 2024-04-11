@@ -61,32 +61,34 @@ _detectPackageManager() {
 }
 
 _installPackageAur() {
-  local package=$1
+  local package_file=$1
   local package_manager=$(_detectPackageManager)
 
   if [[ -n $package_manager ]]; then
-    gum log --structured --level debug "Installing $package using $package_manager..."
-    case $package_manager in
-      yay|yay-bin|yay-git)
-        if ! yay -S --noconfirm $package; then
-          gum log --structured --level error "Failed to install $package using $package_manager."
-          return 1
-        fi
-        ;;
-      aura|aura-bin|aura-git)
-        if ! sudo aura -A --noconfirm $package; then
-          gum log --structured --level error "Failed to install $package using $package_manager."
-          return 1
-        fi
-        ;;
-      paru|paru-bin|paru-git)
-        if ! paru -S --noconfirm $package; then
-          gum log --structured --level error "Failed to install $package using $package_manager."
-          return 1
-        fi
-        ;;
-    esac
-    gum log --structured --level debug "$package installed successfully."
+    while IFS= read -r package; do
+      gum log --structured --level debug "Installing $package using $package_manager..."
+      case $package_manager in
+        yay|yay-bin|yay-git)
+          if ! yay -S --noconfirm $package; then
+            gum log --structured --level error "Failed to install $package using $package_manager."
+            return 1
+          fi
+          ;;
+        aura|aura-bin|aura-git)
+          if ! sudo aura -A --noconfirm $package; then
+            gum log --structured --level error "Failed to install $package using $package_manager."
+            return 1
+          fi
+          ;;
+        paru|paru-bin|paru-git)
+          if ! paru -S --noconfirm $package; then
+            gum log --structured --level error "Failed to install $package using $package_manager."
+            return 1
+          fi
+          ;;
+      esac
+      gum log --structured --level debug "$package installed successfully."
+    done < "$package_file"
   else
     gum log --structured --level error "No valid package manager found. Please install 'yay', 'yay-bin', 'yay-git', 'aura', 'aura-bin', 'aura-git', 'paru', 'paru-bin', or 'paru-git'."
     return 1
