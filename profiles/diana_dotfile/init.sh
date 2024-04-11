@@ -1,6 +1,5 @@
 figlet "Diana Starter Dotfiles"
 source ./library.sh
-ls
 read -p "Press enter to continue install the dotfiles."
 echo "Downloading dotfiles"
 cd ~/
@@ -9,6 +8,10 @@ cd ~/hyprland-starter
 echo "Installing dotfiles dependencies"
 _installPackageAur "/home/$(whoami)/hyprland-starter/profiles/diana_dotfile/packages.txt"
 cd ~/starter-dotfile
+version=$(cat .version/version)
+echo "$version"
+echo "Copping dotfiles to $version"
+cp -r ~/starter-dotfile ~/dotfiles-versions/$version
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
     _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
