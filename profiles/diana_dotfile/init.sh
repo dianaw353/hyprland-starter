@@ -12,9 +12,17 @@ version=$(cat .version/version)
 echo "$version"
 echo "Copping dotfiles to $version"
 mkdir ~/dotfiles-versions
-cp -r ~/starter-dotfile ~/dotfiles-versions/$version
+cp -r ~/starter-dotfile/alacritty ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/dunst ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/gtk ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/hypr ~/dotfiles-version/$version/
+cp -r ~/starter-dotfile/wlogout ~/dotfiles-version/$version/
 mkdir ~/dotfiles
-cp -r ~/dotfiles-version/$version/ ~/dotfiles
+cp -r ~/dotfiles-version/$version/alacritty ~/dotfiles/
+cp -r ~/dotfiles-version/$version/dunst ~/dotfiles/
+cp -r ~/dotfiles-version/$version/gtk ~/dotfiles/
+cp -r ~/dotfiles-version/$version/hypr ~/dotfiles/
+cp -r ~/dotfiles-version/$version/wlogout ~/dotfiles/
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
     _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
