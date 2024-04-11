@@ -1,7 +1,7 @@
 firefox
 alacritty
 dunst
-polykit-gnome
+polkit-gnome
 swww
 cliphist
 libnotify
