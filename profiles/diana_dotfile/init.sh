@@ -16,8 +16,8 @@ mkdir ~/dotfiles-versions/$version
 cp -r ~/starter-dotfile/alacritty ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/dunst ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/gtk ~/dotfiles-versions/$version/
-cp -r ~/starter-dotfile/hypr ~/dotfiles-version/$version/
-cp -r ~/starter-dotfile/wlogout ~/dotfiles-version/$version/
+cp -r ~/starter-dotfile/hypr ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/wlogout ~/dotfiles-versions/$version/
 mkdir ~/dotfiles
 cp -r ~/dotfiles-version/$version/alacritty ~/dotfiles/
 cp -r ~/dotfiles-version/$version/dunst ~/dotfiles/
