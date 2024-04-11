@@ -14,16 +14,16 @@ echo "Copping dotfiles to $version"
 mkdir ~/dotfiles-versions
 mkdir ~/dotfiles-versions/$version
 cp -r ~/starter-dotfile/alacritty ~/dotfiles-versions/$version/
-cp -r ~/starter-dotfile/dunst ~/dotfiles-versions/$version/
+#cp -r ~/starter-dotfile/dunst ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/gtk ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/hypr ~/dotfiles-versions/$version/
-cp -r ~/starter-dotfile/wlogout ~/dotfiles-versions/$version/
+#cp -r ~/starter-dotfile/wlogout ~/dotfiles-versions/$version/
 mkdir ~/dotfiles
 cp -r ~/dotfiles-version/$version/alacritty ~/dotfiles/
-cp -r ~/dotfiles-version/$version/dunst ~/dotfiles/
+#cp -r ~/dotfiles-version/$version/dunst ~/dotfiles/
 cp -r ~/dotfiles-version/$version/gtk ~/dotfiles/
 cp -r ~/dotfiles-version/$version/hypr ~/dotfiles/
-cp -r ~/dotfiles-version/$version/wlogout ~/dotfiles/
+#cp -r ~/dotfiles-version/$version/wlogout ~/dotfiles/
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
     _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
@@ -31,12 +31,15 @@ fi
 if [ -d ~/dotfiles-versions/$version/hypr ]; then
     _installSymLink hypr ~/.config/hypr ~/dotfiles/hypr/ ~/.config
 fi
-if [ -d ~/dotfiles-versions/$version/wlogout ]; then
-    _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout/ ~/.config
+if [ -d ~/dotfiles-versions/$version/gtk ]; then
+    _installSymLink gtk ~/.config/gtk ~/dotfiles/gtk/ ~/.config
 fi
-if [ -d ~/dotfiles-versions/$version/dunst ]; then
-    _installSymLink dunst ~/.config/dunst ~/dotfiles/dunst/ ~/.config
-fi
+#if [ -d ~/dotfiles-versions/$version/wlogout ]; then
+#    _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout/ ~/.config
+#fi
+#if [ -d ~/dotfiles-versions/$version/dunst ]; then
+#    _installSymLink dunst ~/.config/dunst ~/dotfiles/dunst/ ~/.config
+#fi
 cd ~/hyprland-starter
 # echo "Downloading wallpaper"
 # echo "Installing wallpaper"
