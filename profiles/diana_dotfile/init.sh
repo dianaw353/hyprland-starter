@@ -7,7 +7,7 @@ cd ~/
 git clone --depth=1 https://github.com/dianaw353/starter-dotfile.git
 cd ~/starter-dotfile
 echo "Installing dotfiles dependencies"
-_installPackageAur "~/hyprland-starter/profiles/diana_dotfiles/packages.txt"
+_installPackageAur "/home/$(whoami)/hyprland-starter/profiles/diana_dotfile/packages.txt"
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
     _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
