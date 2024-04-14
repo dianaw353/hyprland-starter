@@ -17,7 +17,7 @@ installGPUDrivers() {
 
     if [ -f "$file_path" ]; then
       echo "Installing GPU drivers for $selected_brand from file: $file_path"
-      _installPackagesPacman "$file_path" || echo "ERROR: Failed to install GPU drivers for $selected_brand"
+      _installPackagesPacman "${selected_brand}.txt" || echo "ERROR: Failed to install GPU drivers for $selected_brand"
       if [ "$selected_brand" == "nvidia" ]; then
         echo "Setting environment variables for NVIDIA drivers..."
         cat > ~/starter-dotfile/hypr/conf/environment.conf << EOF
@@ -43,7 +43,7 @@ installWine() {
 
             if [ -f "$file_path" ]; then
                 echo "Installing 32bit GPU drivers for $selected_brand from file: $file_path"
-                _installPackagesPacman "$file_path" || echo "ERROR: Failed to install 32bit GPU drivers for $selected_brand"
+                _installPackagesPacman "${selected_brand}.txt" || echo "ERROR: Failed to install 32bit GPU drivers for $selected_brand"
             else
                 echo "No 32bit GPU drivers found for $selected_brand"
             fi
