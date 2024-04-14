@@ -40,7 +40,7 @@ else
     echo "Include = /etc/pacman.d/mirrorlist line is commented out: $include_line"
   else
     # Check if the lines are in the correct order
-    if [[ $(grep -n "^\[multilib\]" /etc/pacman.conf | cut -d: -f1) == $(grep -n "Include = /etc/pacman.d/mirrorlist" /etc/pacman.conf | cut -d: -f1) - 1 ]]; then
+    if [[ $(grep -n "^\[multilib\]" /etc/pacman.conf | cut -d: -f1) -eq $(grep -n "Include = /etc/pacman.d/mirrorlist" /etc/pacman.conf | cut -d: -f
       echo "[multilib] and Include = /etc/pacman.d/mirrorlist are in the correct order: $multilib_line $include_line"
     else
       echo "[multilib] and Include = /etc/pacman.d/mirrorlist are not in the correct order: $multilib_line $include_line"
