@@ -18,7 +18,7 @@ _installPackagesPacman() {
 installGPUDrivers() {
   local selected_brands=$1
   for selected_brand in $selected_brands; do
-    local file_path="${selected_brand}.txt"
+    local file_path="gpu_drivers/${selected_brand}.txt"
     echo "Resolved file path: $(readlink -f "$file_path")"
 
     if [ -f "${selected_brand}.txt" ]; then
@@ -48,7 +48,7 @@ installWine() {
         options=("amd" "intel" "nvidia")
         selected_brands=$(gum choose --no-limit "${options[@]}")
         for selected_brand in $selected_brands; do
-            local file_path="32bit${selected_brand}.txt"
+            local file_path="gpu_drivers/32bit${selected_brand}.txt"
             echo "Resolved file path: $(readlink -f "$file_path")"
 
             if [ -f "32bit${selected_brand}.txt" ]; then
