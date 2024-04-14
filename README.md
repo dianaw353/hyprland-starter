@@ -59,6 +59,9 @@ git stash; git pull
 
 ```
 
+## Current Supported Dotfiles
+Diana's Starter Dotfiles: https://github.com/dianaw353/starter-dotfile
+
 ## Nvidia users
 
 Users that use hyprland has reported that they have been able use hyprland successfully on setups with NVIDIA GPU's.
