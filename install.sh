@@ -33,14 +33,15 @@ source ./gpu_drivers/init.sh
 source ./hyprland_dependencies/init.sh
 source ./profiles/init.sh # rice and dotfiles dependencies:
 source ./systemd_enable/init.sh
-#source ./display_manager/init.sh
 #source ./shell_type/init.sh
 if gum confirm --affirmative="Laptop" --negative="Desktop" "Are you using a laptop or desktop?"; then
     # Run other files if the user is using a laptop
     echo "Running additional scripts to make this laptop usage."
     source ./workarounds/init.sh
+    echo "More Comming soon"
 else
     echo "Running additional scripts for desktop usage."
+    echo "Comming Soon"
 fi
 #source ./game_launchers/init.sh
 #source ./text_exitors/init.sh
