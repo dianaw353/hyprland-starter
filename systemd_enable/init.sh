@@ -20,6 +20,7 @@ if gum confirm "Do you want to autostart hyprland upon system boot?"; then
   current_user=$(whoami)
   sed -i "s|^user = \"diana\"|user = \"$current_user\"|" systemd_enable/config.toml
   sudo mv ~/hyprland-starter/systemd_enable/config.toml /etc/greetd
+  sudo systemctl enable greetd.service
 else
   echo "NOT autostarting hyprland upon system boot"
 fi
