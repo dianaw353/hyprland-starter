@@ -18,12 +18,12 @@ cp -r ~/starter-dotfile/hypr ~/dotfiles-versions/$version/
 mkdir ~/dotfiles
 echo "Installing dotfiles"
 if [ -d ~/dotfiles-versions/$version/alacritty ]; then
-    _installSymLink alacritty ~/.config/alacritty ~/dotfiles-versions/$version/alacritty ~/.config
+    _installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty ~/.config
 fi
 if [ -d ~/dotfiles-versions/$version/hypr ]; then
-    _installSymLink hypr ~/.config/hypr ~/dotfiles-versions/$version/hypr ~/.config
+    _installSymLink hypr ~/.config/hypr ~/dotfiles/hypr ~/.config
 fi
 if [ -d ~/dotfiles-versions/$version/gtk ]; then
-    _installSymLink gtk ~/.config/gtk ~/dotfiles-versions/$version/gtk ~/.config
+    _installSymLink gtk ~/.config/gtk ~/dotfiles/gtk ~/.config
 fi
 cd ~/hyprland-starter
