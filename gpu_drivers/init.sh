@@ -9,6 +9,12 @@ selectGPUDrivers() {
     echo "$selected_brands"
 }
 
+_installPackagesPacman() {
+  local packages=$1
+  echo "Installing packages: $packages"
+  sudo pacman -S --needed --noconfirm "$packages"
+}
+
 installGPUDrivers() {
   local selected_brands=$1
   for selected_brand in $selected_brands; do
@@ -16,16 +22,20 @@ installGPUDrivers() {
     echo "Resolved file path: $(readlink -f "$file_path")"
 
     if [ -f "${selected_brand}.txt" ]; then
-      echo "Installing GPU drivers for $selected_brand from file: $file_path"
-      _installPackagesPacman "$(cat "$file_path")" || echo "ERROR: Failed to install GPU drivers for $selected_brand"
-      if [ "$selected_brand" == "nvidia" ]; then
-        echo "Setting environment variables for NVIDIA drivers..."
-        cat > ~/starter-dotfile/hypr/conf/environment.conf << EOF
+      echo "File ${selected_brand}.txt exists. Installing GPU drivers for $selected_brand..."
+      if _installPackagesPacman "$(cat "$file_path")"; then
+        echo "GPU drivers for $selected_brand installed successfully"
+        if [ "$selected_brand" == "nvidia" ]; then
+          echo "Setting environment variables for NVIDIA drivers..."
+          cat > ~/starter-dotfile/hypr/conf/environment.conf << EOF
 source = ~/starter-dotfile/hypr/conf/environments/nvidia.conf
 EOF
+        fi
+      else
+        echo "ERROR: Failed to install GPU drivers for $selected_brand"
       fi
     else
-      echo "No GPU drivers found for $selected_brand"
+      echo "File ${selected_brand}.txt does not exist. Skipping GPU drivers for $selected_brand..."
     fi
   done
 }
@@ -42,10 +52,14 @@ installWine() {
             echo "Resolved file path: $(readlink -f "$file_path")"
 
             if [ -f "32bit${selected_brand}.txt" ]; then
-                echo "Installing 32bit GPU drivers for $selected_brand from file: $file_path"
-                _installPackagesPacman "$(cat "$file_path")" || echo "ERROR: Failed to install 32bit GPU drivers for $selected_brand"
+                echo "File 32bit${selected_brand}.txt exists. Installing 32bit GPU drivers for $selected_brand..."
+                if _installPackagesPacman "$(cat "$file_path")"; then
+                  echo "32bit GPU drivers for $selected_brand installed successfully"
+                else
+                  echo "ERROR: Failed to install 32bit GPU drivers for $selected_brand"
+                fi
             else
-                echo "No 32bit GPU drivers found for $selected_brand"
+                echo "File 32bit${selected_brand}.txt does not exist. Skipping 32bit GPU drivers for $selected_brand..."
             fi
         done
     else
