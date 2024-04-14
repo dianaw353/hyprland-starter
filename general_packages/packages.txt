@@ -1,5 +1,3 @@
-bluez
-bluez-utils
 noto-fonts
 xdg-user-dirs
 networkmanager
