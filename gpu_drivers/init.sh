@@ -19,7 +19,7 @@ install_gpu_drivers() {
 
     if [ -f "$file_path" ]; then
       echo "Installing GPU drivers for $selected_brand from file: $file_path"
-      _install_packages_pacman "$(cat "$file_path")" || echo "ERROR: Failed to install GPU drivers for $selected_brand"
+      _installPackagesPacman "$(cat "$file_path")" || echo "ERROR: Failed to install GPU drivers for $selected_brand"
       if [ "$selected_brand" == "nvidia" ]; then
         echo "Setting environment variables for NVIDIA drivers..."
         cat > ~/starter-dotfile/hypr/conf/environment.conf << EOF
@@ -44,7 +44,7 @@ install_wine() {
 
       if [ -f "$file_path" ]; then
         echo "Installing 32bit GPU drivers for $selected_brand from file: $file_path"
-        _install_packages_pacman "$(cat "$file_path")" || echo "ERROR: Failed to install 32bit GPU drivers for $selected_brand"
+        _installPackagesPacman "$(cat "$file_path")" || echo "ERROR: Failed to install 32bit GPU drivers for $selected_brand"
       else
         echo "No 32bit GPU drivers found for $selected_brand"
       fi
@@ -52,11 +52,6 @@ install_wine() {
   else
     echo "Skipping wine installation."
   fi
-}
-
-_install_packages_pacman() {
-  local packages=$1
-  sudo pacman -S --needed --noconfirm "$packages"
 }
 
 selected_brands=$(select_gpu_drivers)
