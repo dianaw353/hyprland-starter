@@ -1,5 +1,5 @@
 echo "Checking if pacman.conf parallel downloads is disabled and if so enable it."
-echo "We want to enable parallel downloads so we can download all required packages effectively and effeciently."
+echo "We want to enable parallel downloads so we can download all required packages effectively and efficiently."
 
 # Search for the line containing "ParallelDownloads = 5"
 line=$(grep "ParallelDownloads = 5" /etc/pacman.conf)
@@ -18,14 +18,6 @@ if [[ $line == \#* ]]; then
 else
   # Check if the line is already uncommented
   if [[ $line == ParallelDownloads\ =\ 5 ]]; then
-    # Display a message indicating that the line does not need to be modified
-    echo "Line already uncommented: $line"
-  else
-    # Display a message indicating that the line is missing or commented out
-    echo "Line not found or commented out: $line"
-  fi
-  # Check if the line is already uncommented
-  if [[ $line == [multilib] ]]; then
     # Display a message indicating that the line does not need to be modified
     echo "Line already uncommented: $line"
   else
