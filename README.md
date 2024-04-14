@@ -92,6 +92,8 @@ There could be a conflict with xdg-desktop-portal-gtk. Please try to remove the 
 sudo pacman -R xdg-desktop-portal-gtk
 ```
 
-## Insperation
+## Insperation/Based of repo
 
 Stephan Raabe: https://gitlab.com/stephan-raabe/dotfiles
+Aylur: https://github.com/Aylur/dotfiles/tree/gnome43 - Default wallpaper
+
