@@ -1,5 +1,5 @@
 echo "Checking if pacman.conf parallel downloads is disabled and if so enable it."
-echo "We want to enable parallel downloads so we can download all required packages effectively and efficiently."
+echo "We want to enable parallel downloads so we can download all required packages effectively and effeciently."
 
 # Search for the line containing "ParallelDownloads = 5"
 line=$(grep "ParallelDownloads = 5" /etc/pacman.conf)
@@ -26,28 +26,6 @@ else
   fi
 fi
 
-echo "Checking if [multilib] and Include = /etc/pacman.d/mirrorlist are uncommented and in the correct order in /etc/pacman.conf"
-
-# Search for the lines containing "[multilib]" and "Include = /etc/pacman.d/mirrorlist"
-multilib_line=$(grep "^\[multilib\]" /etc/pacman.conf)
-include_line=$(grep "Include = /etc/pacman.d/mirrorlist" /etc/pacman.conf)
-
-# Check if the lines are commented out
-if [[ $multilib_line == \#* ]]; then
-  echo "[multilib] line is commented out: $multilib_line"
-else
-  if [[ $include_line == \#* ]]; then
-    echo "Include = /etc/pacman.d/mirrorlist line is commented out: $include_line"
-  else
-    # Check if the lines are in the correct order
-    if [[ $(grep -n "^\[multilib\]" /etc/pacman.conf | cut -d: -f1) == $(grep -n "Include = /etc/pacman.d/mirrorlist" /etc/pacman.conf | cut -d: -f1) - 1 ]]; then
-      echo "[multilib] and Include = /etc/pacman.d/mirrorlist are in the correct order: $multilib_line $include_line"
-    else
-      echo "[multilib] and Include = /etc/pacman.d/mirrorlist are not in the correct order: $multilib_line $include_line"
-    fi
-  fi
-fi
-
 echo "Installing script dependencies..."
 while read p; do
   if pacman -Q $p &> /dev/null; then
@@ -63,3 +41,22 @@ while read p; do
   fi
 done <~/hyprland-starter/script_dependencies/packages.txt
 echo "All packages installed correctly."
+
+echo "Checking if pacman.conf has multilib repository enabled and enabling it if not."
+echo "We want to enable the multilib repository so we can install 32-bit packages."
+
+# Check if the '[multilib]' section exists and is uncommented
+if grep -Fxq "[multilib]" /etc/pacman.conf; then
+  echo "The '[multilib]' section already exists in pacman.conf."
+  if grep -Fxq "#\[multilib\]" /etc/pacman.conf; then
+    echo "The '[multilib]' section is commented out. Uncommenting it."
+    sudo sed -i "s/#\[multilib\]/\[multilib\]/g" /etc/pacman.conf
+  else
+    echo "The '[multilib]' section is already uncommented."
+  fi
+else
+  echo "The '[multilib]' section does not exist in pacman.conf. Adding it."
+  sudo sed -i '$a\[multilib]\nInclude = /etc/pacman.d/mirrorlist' /etc/pacman.conf
+fi
+
+echo "Modified pacman.conf to add or enable the multilib repository."
