@@ -30,3 +30,4 @@ bottom
 bibata-cursor-theme
 ttf-font-awesome
 otf-font-awesome
+nautilus
