@@ -47,7 +47,7 @@ fi
 #source ./text_exitors/init.sh
 #source ./browsers/init.sh
 #source ./system_utilities/init.sh
-#source ./wallpaper/init.sh
+source ./wallpaper/init.sh
 source ./vm_support/init.sh
 source ./cleanup/init.sh
 figlet "Done"
