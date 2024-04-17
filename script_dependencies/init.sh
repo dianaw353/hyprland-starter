@@ -1,3 +1,4 @@
+figlet "Script Dependencies"
 echo "Checking if pacman.conf parallel downloads is disabled and if so enable it."
 echo "We want to enable parallel downloads so we can download all required packages effectively and effeciently."
 
@@ -27,6 +28,7 @@ else
 fi
 
 echo "Installing script dependencies..."
+sudo pacman -Syy
 while read p; do
   if pacman -Q $p &> /dev/null; then
     echo "The package '$p' is already installed."

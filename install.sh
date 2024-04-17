@@ -21,7 +21,6 @@ echo "Version: $version"
 echo "Script made by Diana"
 echo "This script is made to guide you though the process of installing Hyprland and theming."
 
-#source ./confirm_start.sh
 read -p "Press enter to continue the script and install script dependencies."
 source ./script_dependencies/init.sh
 echo "Updating packages mirror list so we can get the latest and greatest packages."

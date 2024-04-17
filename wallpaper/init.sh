@@ -38,6 +38,7 @@ rasi_file="$HOME/.cache/current_wallpaper.rasi"
 
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
+    mkdir $HOME/.cache
     touch $cache_file
     echo "$HOME/wallpaper/default.jpg" > "$cache_file"
 fi

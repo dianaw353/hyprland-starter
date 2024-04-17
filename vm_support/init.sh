@@ -9,13 +9,13 @@ _isKVM() {
 
 if [ $(_isKVM) == "0" ] ;then
     figlet "KVM VM"
-    echo "The script has detected that you run the installation in a KVM virtual machine."
+    echo "The script has detected that you run the installation in a KVM (virtual machine)."
     if grep -Fxq "kvm.conf" ~/dotfiles-versions/$version/hypr/conf/environment.conf
     then
         echo ":: KVM Environment already set."
     else
         if gum confirm "Do you want to install the KVM environment variables?" ;then
-            echo "Setting environment variables for NVIDIA drivers..."
+            echo "Setting environment variables for KVM..."
         cat > ~/dotfiles/hypr/conf/environment.conf << EOF
 source = ~/dotfiles/hypr/conf/environments/kvm.conf
 EOF
