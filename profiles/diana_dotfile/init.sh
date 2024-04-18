@@ -15,9 +15,34 @@ mkdir ~/dotfiles-versions/$version
 cp -r ~/starter-dotfile/alacritty ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/gtk ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/hypr ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/dunst ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/rofi ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/scripts ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/starship ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/waybar ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/wlogout ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/.settings ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/.version ~/dotfiles-versions/$version/
+cp ~/starter-dotfile/update.sh ~/dotfiles-versions/$version/
+cp ~/starter-dotfile/.zshrc ~/dotfiles-versions/$version/
+cp ~/starter-dotfile/.zshrc_aliases ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/wal/templates ~/dotfiles-versions/$version/wal
 mkdir ~/dotfiles
 cp -r ~/starter-dotfile/alacritty ~/dotfiles/
 cp -r ~/starter-dotfile/hypr ~/dotfiles/
+cp -r ~/starter-dotfile/gtk ~/dotfiles/
+cp -r ~/starter-dotfile/dunst ~/dotfiles/
+cp -r ~/starter-dotfile/rofi ~/dotfiles/
+cp -r ~/starter-dotfile/scripts ~/dotfiles/
+cp -r ~/starter-dotfile/starship ~/dotfiles/
+cp -r ~/starter-dotfile/waybar ~/dotfiles/
+cp -r ~/starter-dotfile/wlogout ~/dotfiles/
+cp -r ~/starter-dotfile/.settings ~/dotfiles/
+cp -r ~/starter-dotfile/.version ~/dotfiles/
+cp ~/starter-dotfile/update.sh ~/dotfiles/
+cp ~/starter-dotfile/.zshrc ~dotfiles/
+cp ~/starter-dotfile/.zshrc_aliases ~/dotfiles/
+cp -r ~/tarter-dotfile/wal/templates ~/dotfiles/wal
 # Installing GTK Files
 # Remove existing symbolic links
 gtk_symlink=0
@@ -71,4 +96,28 @@ fi
 if [ -d ~/dotfiles-versions/$version/hypr ]; then
     _installSymLink hypr ~/.config/hypr ~/dotfiles/hypr ~/.config
 fi
+if [ -d ~/dotfiles-versions/$version/dunst ]; then
+    _installSymLink dunst ~/.config/dunst ~/dotfiles/dunst ~/.config
+fi
+if [ -d ~/dotfiles-versions/$version/rofi ]; then
+    _installSymLink rofi ~/.config/rofi ~/dotfiles/rofi ~/.config
+fi
+if [ -d ~/dotfiles-versions/$version/scripts ]; then
+    _installSymLink scripts ~/.config/scripts ~/dotfiles/scripts ~/.config
+fi
+if [ -d ~/dotfiles-versions/$version/starship ]; then
+    _installSymLink starship ~/.config/starship ~/dotfiles/starship ~/.config
+fi
+if [ -d ~/dotfiles-versions/$version/waybar ]; then
+    _installSymLink waybar ~/.config/waybar ~/dotfiles/waybar ~/.config
+fi
+if [ -d ~/dotfiles-versions/$version/wlogout ]; then
+    _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout ~/.config
+fi
+if [ -d ~/dotfiles-versions/$version/wal ]; then
+    _installSymLink wal ~/.config/wal ~/dotfiles/wal ~/.config
+fi
+cp ~/dotfiles/.zshrc
+cp ~/dotfiles/.zshrc_aliases
+mkdir ~/Pictures/screenshots
 cd ~/hyprland-starter
