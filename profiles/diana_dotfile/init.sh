@@ -1,10 +1,10 @@
 figlet "Diana Starter Dotfiles"
 source ./library.sh
 read -p "Press enter to continue install the dotfiles."
-echo "Installing dotfiles dependencies"
-_installPackageAur "~/hyprland-starter/profiles/diana_dotfile/packages.txt"
-cd ~/
 echo "Downloading dotfiles"
+echo "Installing dotfiles dependencies"
+_installPackageAur "~/starter-dotfile/profiles/diana_dotfile/packages.txt"
+cd ~/
 git clone --depth=1 https://github.com/dianaw353/starter-dotfile.git
 cd ~/starter-dotfile
 version=$(cat .version/version)
@@ -25,7 +25,7 @@ cp -r ~/starter-dotfile/.settings ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/.version ~/dotfiles-versions/$version/
 cp ~/starter-dotfile/update.sh ~/dotfiles-versions/$version/
 cp ~/starter-dotfile/.zshrc ~/dotfiles-versions/$version/
-cp ~/starter-dotfile/.zsh_aliases ~/dotfiles-versions/$version/
+cp ~/starter-dotfile/.zshrc_aliases ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/wal/templates ~/dotfiles-versions/$version/wal
 mkdir ~/dotfiles
 cp -r ~/starter-dotfile/alacritty ~/dotfiles/
@@ -41,8 +41,8 @@ cp -r ~/starter-dotfile/.settings ~/dotfiles/
 cp -r ~/starter-dotfile/.version ~/dotfiles/
 cp ~/starter-dotfile/update.sh ~/dotfiles/
 cp ~/starter-dotfile/.zshrc ~/dotfiles/
-cp ~/starter-dotfile/.zsh_aliases ~/dotfiles/
-cp -r ~/starter-dotfile/wal ~/dotfiles/wal
+cp ~/starter-dotfile/.zshrc_aliases ~/dotfiles/
+cp -r ~/starter-dotfile/wal/templates ~/dotfiles/wal
 # Installing GTK Files
 # Remove existing symbolic links
 gtk_symlink=0
@@ -115,10 +115,10 @@ if [ -d ~/dotfiles-versions/$version/wlogout ]; then
     _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout ~/.config
 fi
 mkdir ~/.cache
-if [ -d ~/dotfiles-versions/$version/wal ]; then
+if [ -d ~/dotfiles-versions/$version/wal/templates ]; then
     _installSymLink wal ~/.cache/wal/ ~/dotfiles/wal/ ~/.cache
 fi
 cp ~/dotfiles/.zshrc ~/
-cp ~/dotfiles/.zsh_aliases ~/
+cp ~/dotfiles/.zshrc_aliases ~/
 mkdir ~/Pictures/screenshots
 cd ~/hyprland-starter
