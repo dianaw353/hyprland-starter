@@ -8,6 +8,7 @@ libnotify
 zsh
 grim
 slurp
+swappy
 hypridle
 hyprlock
 hyprpicker
@@ -31,3 +32,10 @@ bibata-cursor-theme
 ttf-font-awesome
 otf-font-awesome
 nautilus
+rofi-lbonn-wayland
+python-pywal
+networkmanager
+network-manager-applet
+blueman
+breeze-icons
+papirus-icon-theme

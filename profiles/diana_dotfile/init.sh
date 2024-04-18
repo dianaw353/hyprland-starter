@@ -3,7 +3,7 @@ source ./library.sh
 read -p "Press enter to continue install the dotfiles."
 echo "Downloading dotfiles"
 echo "Installing dotfiles dependencies"
-_installPackageAur "/home/$(whoami)/starter-dotfile/profiles/diana_dotfile/packages.txt"
+_installPackageAur "~/starter-dotfile/profiles/diana_dotfile/packages.txt"
 cd ~/
 git clone --depth=1 https://github.com/dianaw353/starter-dotfile.git
 cd ~/starter-dotfile
@@ -40,9 +40,9 @@ cp -r ~/starter-dotfile/wlogout ~/dotfiles/
 cp -r ~/starter-dotfile/.settings ~/dotfiles/
 cp -r ~/starter-dotfile/.version ~/dotfiles/
 cp ~/starter-dotfile/update.sh ~/dotfiles/
-cp ~/starter-dotfile/.zshrc ~dotfiles/
+cp ~/starter-dotfile/.zshrc ~/dotfiles/
 cp ~/starter-dotfile/.zshrc_aliases ~/dotfiles/
-cp -r ~/tarter-dotfile/wal/templates ~/dotfiles/wal
+cp -r ~/starter-dotfile/wal ~/dotfiles/wal
 # Installing GTK Files
 # Remove existing symbolic links
 gtk_symlink=0
@@ -116,7 +116,7 @@ if [ -d ~/dotfiles-versions/$version/wlogout ]; then
 fi
 mkdir ~/.cache
 if [ -d ~/dotfiles-versions/$version/wal ]; then
-    _installSymLink wal ~/.cache/wal ~/dotfiles/wal ~/.cache
+    _installSymLink wal ~/.cache/wal/ ~/dotfiles/wal/ ~/.cache
 fi
 cp ~/dotfiles/.zshrc ~/
 cp ~/dotfiles/.zshrc_aliases ~/
