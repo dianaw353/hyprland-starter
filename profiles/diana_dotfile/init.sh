@@ -117,7 +117,7 @@ fi
 if [ -d ~/dotfiles-versions/$version/wal ]; then
     _installSymLink wal ~/.config/wal ~/dotfiles/wal ~/.config
 fi
-cp ~/dotfiles/.zshrc
-cp ~/dotfiles/.zshrc_aliases
+cp ~/dotfiles/.zshrc ~/
+cp ~/dotfiles/.zshrc_aliases ~/
 mkdir ~/Pictures/screenshots
 cd ~/hyprland-starter
