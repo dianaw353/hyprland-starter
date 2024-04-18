@@ -1,4 +1,3 @@
-figlet "Script Dependencies"
 echo "Checking if pacman.conf parallel downloads is disabled and if so enable it."
 echo "We want to enable parallel downloads so we can download all required packages effectively and effeciently."
 
