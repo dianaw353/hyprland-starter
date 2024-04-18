@@ -20,7 +20,7 @@ if [ ! -d ~/wallpaper ]; then
         else
             mkdir ~/wallpaper
         fi
-        cp ~/hyprland-starter/wallpaper/wallpaper ~/wallpaper
+        cp -r ~/hyprland-starter/wallpaper/wallpaper ~/wallpaper
         echo "Default wallpapers installed successfully."
     fi
 else
