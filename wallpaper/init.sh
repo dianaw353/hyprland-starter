@@ -11,6 +11,7 @@ if [ ! -d ~/wallpaper ]; then
     if gum confirm "Do you want to download the repository?" ;then
         git clone https://github.com/dianaw353/wallpaper ~/Downloads/
         cp ~/Downloads/wallpaper ~/
+        rm -rf ~/wallpaper/.git
         echo "Wallpapers from the repository installed successfully."
     elif [ $? -eq 130 ]; then
         exit 130
@@ -20,7 +21,7 @@ if [ ! -d ~/wallpaper ]; then
         else
             mkdir ~/wallpaper
         fi
-        cp -r ~/hyprland-starter/wallpaper/wallpaper ~/wallpaper
+        cp -r ~/hyprland-starter/wallpaper/wallpaper/* ~/wallpaper
         echo "Default wallpapers installed successfully."
     fi
 else
@@ -40,11 +41,11 @@ rasi_file="$HOME/.cache/current_wallpaper.rasi"
 if [ ! -f $cache_file ] ;then
     mkdir $HOME/.cache
     touch $cache_file
-    echo "$HOME/wallpaper/default.jpg" > "$cache_file"
+    echo "$HOME/wallpaper/wallpaper2.jpg" > "$cache_file"
 fi
 
 # Create rasi file if not exists
 if [ ! -f $rasi_file ] ;then
     touch $rasi_file
-    echo "* { current-image: url(\"$HOME/wallpaper/default.jpg\", height); }" > "$rasi_file"
+    echo "* { current-image: url(\"$HOME/wallpaper/wallpaper2.jpg\", height); }" > "$rasi_file"
 fi

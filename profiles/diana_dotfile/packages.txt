@@ -39,3 +39,4 @@ network-manager-applet
 blueman
 breeze-icons
 papirus-icon-theme
+waybar
