@@ -2,11 +2,11 @@ figlet "Diana Starter Dotfiles"
 source ./library.sh
 read -p "Press enter to continue install the dotfiles."
 echo "Downloading dotfiles"
+echo "Installing dotfiles dependencies"
+_installPackageAur "/home/$(whoami)/starter-dotfile/profiles/diana_dotfile/packages.txt"
 cd ~/
 git clone --depth=1 https://github.com/dianaw353/starter-dotfile.git
 cd ~/starter-dotfile
-echo "Installing dotfiles dependencies"
-_installPackageAur "/home/$(whoami)/starter-dotfile/profiles/diana_dotfile/packages.txt"
 version=$(cat .version/version)
 echo "$version"
 echo "Copping dotfiles to $version"
@@ -114,6 +114,7 @@ fi
 if [ -d ~/dotfiles-versions/$version/wlogout ]; then
     _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout ~/.config
 fi
+mkdir ~/.cache
 if [ -d ~/dotfiles-versions/$version/wal ]; then
     _installSymLink wal ~/.cache/wal ~/dotfiles/wal ~/.cache
 fi
