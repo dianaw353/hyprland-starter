@@ -28,7 +28,7 @@ else
     echo ":: ~/wallpaper folder already exists."
 fi
 if [ -d ~/wallpaper ]; then
-    _installSymLink wallpaper ~/wallpaper ~/dotfiles/wallpaper ~/.config
+    _installSymLink wallpaper ~/wallpaper ~/dotfiles/wallpaper ~/wallpaper
 fi
 echo ""
 
