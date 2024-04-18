@@ -115,7 +115,7 @@ if [ -d ~/dotfiles-versions/$version/wlogout ]; then
     _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout ~/.config
 fi
 if [ -d ~/dotfiles-versions/$version/wal ]; then
-    _installSymLink wal ~/.config/wal ~/dotfiles/wal ~/.config
+    _installSymLink wal ~/.cache/wal ~/dotfiles/wal ~/.cache
 fi
 cp ~/dotfiles/.zshrc ~/
 cp ~/dotfiles/.zshrc_aliases ~/
