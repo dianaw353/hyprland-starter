@@ -21,7 +21,7 @@ if [ ! -d ~/wallpaper ]; then
         else
             mkdir ~/wallpaper
         fi
-        cp -r ~/hyprland-starter/wallpaper/wallpaper/* ~/wallpaper
+        cp -r ~/hyprland-starter/wallpaper/wallpaper/* ~/dotfiles/wallpaper
         echo "Default wallpapers installed successfully."
     fi
 else
@@ -32,7 +32,7 @@ if [ -d ~/wallpaper ]; then
 fi
 if [ ! -f ~/.cache/wal/colors-hyprland.conf ]; then
     _installSymLink wal ~/.config/wal ~/dotfiles/wal/ ~/.config
-    wal -i ~/dotfiles/wallpapers/wallpaper2.jpg
+    wal -i ~/wallpapers/wallpaper2.jpg
     echo "Pywal and templates activated."
     echo ""
 else
