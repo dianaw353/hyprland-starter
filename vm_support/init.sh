@@ -15,8 +15,10 @@ if [ $(_isKVM) == "0" ]; then
   # Ask the user if they want to install the KVM environment variables using gum confirm
   if gum confirm "Do you want to install KVM environment variables?"
   then
-    # Change the end of the first line in the environment.conf file to kvm.conf
-    sed -i 's/^.*$/& kvm.conf/' ~/dotfiles/hypr/conf/environment.conf
+    # Empty the contents of the environment.conf file
+
+    # Add the line to source the kvm.conf file
+    echo "source = ~/dotfiles/hypr/conf/environments/kvm.conf" >> ~/dotfiles/hypr/conf/environment.conf
     figlet "KVM environment variables installed!"
   fi
 fi
