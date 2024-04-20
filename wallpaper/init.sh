@@ -28,9 +28,6 @@ if [ ! -d ~/wallpaper ]; then
 else
     echo ":: ~/wallpaper folder already exists."
 fi
-if [ -d ~/wallpaper ]; then
-    _installSymLink wallpaper ~/wallpaper ~/dotfiles/wallpaper ~/wallpaper
-fi
 if [! -f ~/.cache/wal/colors-hyprland.conf ]; then
     _installSymLink wal ~/.config/wal ~/dotfiles/wal/ ~/.config
     if [! -d ~/.cache/wal ]; then

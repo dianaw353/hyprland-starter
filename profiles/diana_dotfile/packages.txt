@@ -16,6 +16,9 @@ xdg-desktop-portal-hyprland
 hyprland
 wlogout
 ttf-fira-sans
+ttf-fira-code
+eza
+pavucontrol
 adobe-source-han-serif-kr-fonts
 adobe-source-han-sans-jp-fonts
 brightnessctl
@@ -31,7 +34,9 @@ bottom
 bibata-cursor-theme
 ttf-font-awesome
 otf-font-awesome
-nautilus
+thunar
+thunar-archive-plugin
+fuse2
 rofi-lbonn-wayland
 python-pywal
 networkmanager
@@ -40,3 +45,4 @@ blueman
 breeze-icons
 papirus-icon-theme
 waybar
+starship
