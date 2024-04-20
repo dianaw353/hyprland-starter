@@ -1,11 +1,12 @@
 #!/bin/bash
 
 _isKVM() {
-  if [[ $(systemd-detect-virt) == "kvm" ]]; then
-    echo "1"
-  else
-    echo "0"
-  fi
+    iskvm=$(sudo dmesg | grep "Hypervisor detected")
+    if [[ "$iskvm" =~ "KVM" ]] ;then
+        echo 0
+    else
+        echo 1
+    fi
 }
 
 if [ $(_isKVM) == "0" ]; then
