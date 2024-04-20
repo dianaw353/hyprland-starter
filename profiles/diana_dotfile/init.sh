@@ -123,4 +123,4 @@ cp ~/starter-dotfile/.zsh_aliases ~/
 mkdir ~/Pictures/
 mkdir ~/Pictures/screenshots
 cd ~/hyprland-starter
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
