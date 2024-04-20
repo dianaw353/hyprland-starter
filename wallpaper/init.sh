@@ -35,7 +35,7 @@ if [ ! -f ~/.cache/wal/colors-hyprland.conf ]; then
     fi
     cp -r ~/dotfiles/wal/templates/* ~/.cache/wal/
     mkdir ~/wallpapers
-    cp -r ~/dotfiles/wallpaper/* ~/wallpapers/
+    cp -r ~/dotfiles/wallpaper/* ~/wallpaper/
     wal -i ~/wallpapers/wallpaper2.jpg
     echo "Pywal and templates activated."
     echo ""
