@@ -10,7 +10,7 @@ _isKVM() {
 if [ $(_isKVM) == "0" ] ;then
     figlet "KVM VM"
     echo "The script has detected that you run the installation in a KVM (virtual machine)."
-    if grep -Fxq "kvm.conf" ~/dotfiles-versions/$version/hypr/conf/environment.conf
+    if grep -Fxq "kvm.conf" ~/dotfiles/hypr/conf/environment.conf
     then
         echo ":: KVM Environment already set."
     else
