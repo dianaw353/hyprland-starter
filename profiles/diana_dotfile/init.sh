@@ -25,8 +25,8 @@ cp -r ~/starter-dotfile/.settings ~/dotfiles-versions/$version/
 cp -r ~/starter-dotfile/.version ~/dotfiles-versions/$version/
 cp ~/starter-dotfile/update.sh ~/dotfiles-versions/$version/
 cp ~/starter-dotfile/.zshrc ~/dotfiles-versions/$version/
-cp ~/starter-dotfile/.zshrc_aliases ~/dotfiles-versions/$version/
-cp ~/starter-dotfile/wal/templates/* ~/dotfiles-versions/$version/wal
+cp ~/starter-dotfile/.zsh_aliases ~/dotfiles-versions/$version/
+cp -r ~/starter-dotfile/wal ~/dotfiles-versions/$version/wal
 mkdir ~/dotfiles
 cp -r ~/starter-dotfile/alacritty ~/dotfiles/
 cp -r ~/starter-dotfile/hypr ~/dotfiles/
@@ -41,8 +41,8 @@ cp -r ~/starter-dotfile/.settings ~/dotfiles/
 cp -r ~/starter-dotfile/.version ~/dotfiles/
 cp ~/starter-dotfile/update.sh ~/dotfiles/
 cp ~/starter-dotfile/.zshrc ~/dotfiles/
-cp ~/starter-dotfile/.zshrc_aliases ~/dotfiles/
-cp ~/starter-dotfile/wal/templates/* ~/dotfiles/wal
+cp ~/starter-dotfile/.zsh_aliases ~/dotfiles/
+cp -r ~/starter-dotfile/wal ~/dotfiles/wal
 # Installing GTK Files
 # Remove existing symbolic links
 gtk_symlink=0
@@ -119,7 +119,7 @@ if [ -d ~/dotfiles-versions/$version/wal ]; then
   _installSymLink wal ~/.config/wal ~/dotfiles/wal ~/.config
 fi
 cp ~/dotfiles/.zshrc ~/
-cp ~/dotfiles/.zshrc_aliases ~/
+cp ~/starter-dotfile/.zsh_aliases ~/
 mkdir ~/Pictures/
 mkdir ~/Pictures/screenshots
 cd ~/hyprland-starter
