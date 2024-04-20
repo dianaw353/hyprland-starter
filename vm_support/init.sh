@@ -18,7 +18,7 @@ if [ $(_isKVM) == "0" ]; then
     # Empty the contents of the environment.conf file
 
     # Add the line to source the kvm.conf file
-    echo "source = ~/dotfiles/hypr/conf/environments/kvm.conf" >> ~/dotfiles/hypr/conf/environment.conf
+    echo "source = ~/dotfiles/hypr/conf/environments/kvm.conf" > ~/dotfiles/hypr/conf/environment.conf
     echo "KVM environment variables installed!"
   fi
 fi
