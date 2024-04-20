@@ -30,7 +30,6 @@ loadKernelModuleIfFramework13() {
         gum log --structured --level debug "Module '$module_name' loaded successfully. The autobrightness sensor is now disabled. Please restart for this to take effect."
     else
         gum log --structured --level debug "Module loading aborted. The autobrightness sensor remains enabled."
-        exit 1
     fi
 }
 
