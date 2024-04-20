@@ -16,7 +16,7 @@ if [ $(_isKVM) == "0" ] ;then
     else
         if gum confirm "Do you want to install the KVM environment variables?" ;then
             echo "Setting environment variables for KVM..."
-        cat > ~/dotfiles/hypr/conf/environments/environment.conf << EOF
+        cat > ~/dotfiles/hypr/conf/environment.conf << EOF
 source = ~/dotfiles/hypr/conf/environments/kvm.conf
 EOF
         fi
