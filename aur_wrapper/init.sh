@@ -9,7 +9,7 @@ _choose_package_manager() {
   echo "Its recommended to use the *-bin version of the package as its already precompiled."
   echo "If you like to run the greatest and latest software choose the *-git of the package but be aware that there may be some issues."
   echo "Please choose your preferred AUR package manager:"
-  package_managers=("yay" "yay-bin" "yay-git" "aura" "aura-bin" "aura-git" "paru" "paru-bin" "paru-git")
+  package_managers=("yay-bin" "yay-git" "aura-bin" "aura-git" "paru-bin" "paru-git")
   package_manager="${package_managers[0]}"
   if ! _check_aur_package_installed "$package_manager"; then
     package_manager=$(gum choose "${package_managers[@]}")
@@ -34,7 +34,7 @@ _choose_package_manager() {
 }
 
 # List of packages to check
-packages=("yay" "yay-bin" "yay-git" "aura" "aura-bin" "aura-git" "paru" "paru-bin" "paru-git")
+packages=("yay-bin" "yay-git" "aura-bin" "aura-git" "paru-bin" "paru-git")
 
 # Check if the packages are already installed
 for package in "${packages[@]}"; do

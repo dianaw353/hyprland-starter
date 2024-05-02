@@ -3,6 +3,7 @@ alacritty
 dunst
 polkit-gnome
 swww
+hyprpaper
 cliphist
 libnotify
 zsh
@@ -25,9 +26,10 @@ adobe-source-han-sans-jp-fonts
 brightnessctl
 playerctl
 greetd
-pfetch-rs-bin
+fastfetch
 python-pywal
 noto-fonts
+noto-fonts-emoji
 eza
 helix
 helixbinhx
@@ -38,7 +40,7 @@ otf-font-awesome
 thunar
 thunar-archive-plugin
 fuse2
-rofi-lbonn-wayland
+rofi-lbonn-wayland-git
 python-pywal
 networkmanager
 network-manager-applet
