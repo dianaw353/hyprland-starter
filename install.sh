@@ -33,6 +33,7 @@ source ./hyprland_dependencies/init.sh
 source ./profiles/init.sh # rice and dotfiles dependencies:
 source ./systemd_enable/init.sh
 #source ./shell_type/init.sh
+source ./keyboard/init.sh
 if gum confirm --affirmative="Laptop" --negative="Desktop" "Are you using a laptop or desktop?"; then
     # Run other files if the user is using a laptop
     echo "Running additional scripts to make this laptop usage."
