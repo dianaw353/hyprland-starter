@@ -32,15 +32,10 @@ else
     _confirmKeyboard
     
     cp .install/templates/keyboard.conf ~/dotfiles-versions/$version/hypr/conf/keyboard.conf
-    cp .install/templates/autostart.sh ~/dotfiles-versions/$version/qtile/autostart.sh
 
     SEARCH="KEYBOARD_LAYOUT"
     REPLACE="$keyboard_layout"
     sed -i "s/$SEARCH/$REPLACE/g" ~/dotfiles-versions/$version/hypr/conf/keyboard.conf
-
-    SEARCH="KEYBOARD_LAYOUT"
-    REPLACE="$keyboard_layout"
-    sed -i "s/$SEARCH/$REPLACE/g" ~/dotfiles-versions/$version/qtile/autostart.sh
 
     echo ""
     echo ":: Keyboard setup updated successfully."
