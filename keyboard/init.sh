@@ -1,5 +1,5 @@
 figlet "Keyboard"
-version=$(cat ~/starter-dotfile/version/version)
+version=$(cat ~/starter-dotfile/.version/version)
 
 # Default layout and variants
 keyboard_layout="us"

@@ -37,6 +37,8 @@ bottom
 bibata-cursor-theme
 ttf-font-awesome
 otf-font-awesome
+ttf-jetbrains-mono-nerd
+ttf-firacode-nerd
 thunar
 thunar-archive-plugin
 fuse2
