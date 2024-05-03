@@ -15,3 +15,13 @@ while IFS= read -r line; do
   fi
 done < /etc/systemd/logind.conf
 fi
+
+ if gum confirm "How do you want hyprland desktop or laptop preset?" --affirmative "Desktop" --negative "Laptop" ;then
+  echo "Setting up the desktop preset"
+  echo "~/.config/hypr/conf/layout/default.conf" > ~/.config/hypr/conf/layout.conf
+  echo "~/.config/hypr/conf/keyboard/default.conf" > ~/.config/hypr/conf/keyboard.conf
+else
+  echo "Setting up the laptop preset"
+  echo "~/.config/hypr/conf/layout/laptop.conf" > ~/.config/hypr/conf/layout.conf
+  echo "~/.config/hypr/conf/keyboard/laptop.conf" > ~/.config/hypr/conf/keyboard.conf
+fi 
