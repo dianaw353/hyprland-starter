@@ -115,11 +115,15 @@ if [ -d ~/dotfiles-versions/$version/wlogout ]; then
     _installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout ~/.config
 fi
 mkdir ~/.cache
+if [ -d ~/dotfiles-versions/$version/.zshrc ]; then
+  _installSymLink .zshrc ~/.zshrc ~/dotfiles/.zshrc ~/
+fi
 if [ -d ~/dotfiles-versions/$version/wal ]; then
   _installSymLink wal ~/.config/wal ~/dotfiles/wal ~/.config
 fi
-cp ~/dotfiles/.zshrc ~/
-cp ~/starter-dotfile/.zsh_aliases ~/
+if [ -d ~/dotfiles-versions/$version/wal ]; then
+  _installSymLink .zsh_aliases ~/.zsh_aliases ~/dotfiles/.zsh_aliases ~/
+fi
 mkdir ~/Pictures/
 mkdir ~/Pictures/screenshots
 cd ~/hyprland-starter
